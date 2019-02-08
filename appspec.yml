@@ -1,0 +1,17 @@
+# For AWS code deploy
+version: 0.0
+os: linux 
+files:
+  - source: /
+    destination: /home/ubuntu/www-nodejs/mtgamer_esports
+permissions:
+  - object: /
+    owner: ubuntu
+    group: ubuntu
+hooks:
+  BeforeInstall:
+    - location: scripts/beforeInstall.sh
+      runas: ubuntu
+  AfterInstall:
+    - location: scripts/afterInstall.sh
+      runas: ubuntu

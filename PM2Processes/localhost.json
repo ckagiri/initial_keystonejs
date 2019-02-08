@@ -1,0 +1,15 @@
+[{
+    "name"        : "mtgamer_esports",
+    "script"      : "keystone.js",
+    "args"        : "[]",
+    "ignoreWatch" : ["node_modules", "public"],
+    "watch"       : "true",
+    "exec_mode"  : "fork",
+    "log_date_format": "YYYY-MM-DD HH:mm:ss:SSS Z",
+    "error_file" : "/var/log/pm2/mtgamer_esports-err.log",
+    "out_file"   : "/var/log/pm2/mtgamer_esports-out.log",
+    "env": {
+        "NODE_ENV": "development",
+        "APP_ENV": "localhost"
+    }
+  }]

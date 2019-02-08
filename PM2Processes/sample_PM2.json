@@ -1,0 +1,17 @@
+[{
+  "name"        : "mtgamer_esports",
+  "script"      : "keystone.js",
+  "args"        : "[]",
+  "ignoreWatch" : ["node_modules", "public"],
+  "watch"       : true,
+  "exec_mode"  : "cluster_mode",
+  "instances"   : 1,
+  "log_date_format": "YYYY-MM-DD HH:mm:ss:SSS Z",
+  "error_file" : "/var/log/pm2/mtgamer_esports-err.log",
+  "out_file"   : "/var/log/pm2/mtgamer_esports-out.log",
+  "env": {
+      "APP_ENV":"production",
+      "CLIENT_PLATFORM": "android",
+      "KEYSTONE_MODE":"cms"
+  }
+}]

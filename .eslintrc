@@ -1,0 +1,55 @@
+{
+  "extends": [
+      "airbnb",
+      "prettier",
+      "prettier/react"
+  ],
+  "plugins": [
+      "prettier"
+  ],
+  "rules": {
+      "class-methods-use-this": 0,
+      "global-require": 0,
+      "import/first": 0,
+      "import/no-dynamic-require": 0,
+      "no-console": 0,
+      "no-param-reassign": [
+          2,
+          {
+              "props": false
+          }
+      ],
+      "no-shadow": 0,
+      "no-underscore-dangle": 0,
+      "prettier/prettier": [
+          "error",
+          {
+              "singleQuote": true,
+              "tabWidth": 4
+          }
+      ],
+      "react/prop-types": 0,
+      "react/jsx-filename-extension": [
+          1,
+          {
+              "extensions": [
+                  ".js",
+                  ".jsx"
+              ]
+          }
+      ]
+  },
+  "globals": {
+      "Keystone": true,
+      "Twitch": false
+  },
+  "env": {
+      "browser": true,
+      "node": true
+  },
+  "settings": {
+      "import/resolver": {
+          "webpack": {}
+      }
+  }
+}

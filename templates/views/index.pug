@@ -1,0 +1,57 @@
+doctype html
+html
+	head
+		meta(charset="utf-8")
+		//- meta(name="viewport", content="user-scalable=yes,width=1200")
+		meta(name="viewport", content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no")
+		if ogType
+			meta(property='og:type', content=`${ogType}`)
+		if meteDescription
+			meta(property='description', content=`${meteDescription}`)
+		if ogTitle
+			meta(property='og:title', content=`${ogTitle}`)
+		if ogDescription
+			meta(property='og:description', content=`${ogDescription}`)
+		if ogImage
+			meta(property='og:image', content=`${ogImage}`)
+		if ogHTTPSImage
+			meta(property='og:image:secure_url', content=`${ogHTTPSImage}`)
+		if ogImageWidth
+			meta(property='og:image:width', content=`${ogImageWidth}`)
+		if ogImageHeight
+			meta(property='og:image:height', content=`${ogImageHeight}`)
+		if ogUrl
+			meta(property='og:url', content=`${ogUrl}`)
+
+		if metaTitle
+			title=metaTitle
+		else 
+			title='React Keystonejs'
+		link(rel="shortcut icon", href="/images/icon/mtgamer_favicon.ico", type="image/x-icon")
+		link(rel="stylesheet", href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css")
+		link(rel='stylesheet', type='text/css', href='https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css')
+		link(rel='stylesheet', type='text/css', href='https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css')
+		link(rel='stylesheet', type='text/css', href='/styles/site.css')
+		link(rel="stylesheet" href="https://unpkg.com/react-select/dist/react-select.css")
+		if ogUrl
+			script.
+				APP_URL = "#{ogUrl}";
+	body
+		#react-root
+		#fb-root
+		script(src="https://www.google.com/recaptcha/api.js", async='', defer='')
+		script(src="/js/vendor.js")
+		script(src="/js/main.js")
+		script.
+			document.addEventListener('touchmove', function (event) {
+				if (event.scale !== 1) { event.preventDefault(); }
+			}, false);
+			var lastTouchEnd = 0;
+			document.addEventListener('touchend', function (event) {
+				var now = (new Date()).getTime();
+				if (now - lastTouchEnd <= 300) {
+					event.preventDefault();
+				}
+				lastTouchEnd = now;
+			}, false);
+
